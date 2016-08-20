@@ -26,6 +26,10 @@ var pluginPrivacy = '(' + function () {
 	properties.mimeTypes = vecw({}, true);
 	properties.plugins = vecw({}, true);
 	
+	if (window.navigator.userAgent.indexOf("Windows NT") !== -1) {
+		properties.platform = vecw("win32", true);
+	}
+
 	Object.defineProperty(properties.plugins.value, "refresh", vecw(function() {}));
 	
 	//Expose Flash
